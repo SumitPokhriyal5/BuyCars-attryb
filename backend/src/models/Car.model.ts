@@ -1,8 +1,10 @@
 import { Document, Schema, Model , model , Types } from 'mongoose';
+import { IOEMSpec } from './OEMSpecs.model.js';
+import { IUser } from './User.model.js';
 
 interface ICar extends Document {
-  dealer: Types.ObjectId;
-  oemSpec: Types.ObjectId;
+  dealer: IUser;
+  oemSpec: IOEMSpec;
   carImage: string;
   odometer: number;
   majorScratches: string;

@@ -1,6 +1,6 @@
 import { Document, Schema, Model , model } from 'mongoose';
 
-interface IOEMSpec extends Document {
+export interface IOEMSpec extends Document {
   brand: string;
   model: string;
   year: number;
