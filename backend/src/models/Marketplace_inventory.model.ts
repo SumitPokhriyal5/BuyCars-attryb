@@ -14,7 +14,7 @@ interface ICar extends Document {
   registrationPlace: string;
 }
 
-const carSchema = new Schema<ICar>(
+const marketplace_inventorySchema = new Schema<ICar>(
   {
     dealer: {
       type: Schema.Types.ObjectId,
@@ -60,9 +60,9 @@ const carSchema = new Schema<ICar>(
   { versionKey: false, timestamps: true }
 );
 
-const CarModel: Model<ICar> = model<ICar>(
-  'car',
-  carSchema
+const marketplace_inventoryModel: Model<ICar> = model<ICar>(
+  'marketplace_inventory',
+  marketplace_inventorySchema
 );
 
-export { CarModel };
+export { marketplace_inventoryModel };

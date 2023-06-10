@@ -66,7 +66,7 @@ const userSignUp = async (req: Request, res: Response) => {
         message: 'User already exists!',
       });
     } else {
-      bcrypt.hash(password, process.env.SALT_ROUND, async function (err, hash) {
+      bcrypt.hash(password, Number(process.env.SALT_ROUND), async function (err:any, hash:string) {
         if (err) {
           res.status(500).send({
             message: 'error in bcrypt',

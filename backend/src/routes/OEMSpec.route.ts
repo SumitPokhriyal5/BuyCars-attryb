@@ -1,5 +1,5 @@
 import express from 'express';
-import { getAllOems, postOEMs } from '../controllers/oemSpec.controller.js';
+import { getAllOems, postOEMs } from '../controllers/OEMSpec.controller.js';
 
 const oemSpecRouter = express.Router();
 

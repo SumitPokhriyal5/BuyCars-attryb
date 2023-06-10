@@ -31,14 +31,14 @@ const postOEMs = async (req: Request, res: Response) => {
     // Insert new OEM-specs into the database
     await OEMSpecModel.insertMany([
       {
-        brand: "Honda",
-        model: "Honda City",
-        year: 2021,
-        listPrice: 20000,
-        colors: ["White", "Silver", "Black"],
-        mileage: 5000,
-        power: 150,
-        maxSpeed: 180
+        "brand": "Honda",
+        "model": "Honda City",
+        "year": 2021,
+        "listPrice": 20000,
+        "colors": ["White", "Silver", "Black"],
+        "mileage": 5000,
+        "power": 150,
+        "maxSpeed": 180
       },
       {
         "brand": "Toyota",

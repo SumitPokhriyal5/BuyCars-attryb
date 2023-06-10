@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { CarModel } from '../models/Car.model.js';
+import { marketplace_inventoryModel } from '../models/Marketplace_inventory.model.js';
 
 /**
  * Get all cars from Database
@@ -9,7 +9,7 @@ const getAllCars = async (req: Request, res: Response) => {
 
   try {
     // get cars data with OEM details and dealer's username
-    const car_data = await CarModel.find()
+    const car_data = await marketplace_inventoryModel.find()
       .populate('oemSpec')
       .populate('dealer', 'username')
       .exec();
@@ -53,7 +53,7 @@ const postCar = async (req: Request, res: Response) => {
   const userId = req.headers.userId;
   try {
     // post car data in database
-    const newCarData = new CarModel({ dealer: userId, ...req.body });
+    const newCarData = new marketplace_inventoryModel({ dealer: userId, ...req.body });
     await newCarData.save();
     res.status(201).send({ message: 'New car posted' });
   } catch (error) {
@@ -74,10 +74,10 @@ const updateCarDetails = async (req: Request, res: Response) => {
   const update = req.body;
   try {
     // finding cars created by the loggedin user
-    const matchedCars = await CarModel.find({ dealer: userId, _id: carId });
+    const matchedCars = await marketplace_inventoryModel.find({ dealer: userId, _id: carId });
     if (matchedCars.length) {
       // find the car by its id and update the data if you are the dealer
-      await CarModel.findByIdAndUpdate(carId, update);
+      await marketplace_inventoryModel.findByIdAndUpdate(carId, update);
       res.status(202).send({ message: 'car data updated successfully.' });
     } else {
       res.status(404).send({ message: "you're not authorized to edit the info of this car!" });
@@ -99,10 +99,10 @@ const deleteCar = async (req: Request, res: Response) => {
     const userId = req.headers.userId;
     try {
     // finding cars created by the loggedin user
-    const matchedCars = await CarModel.find({ dealer: userId, _id: carId });
+    const matchedCars = await marketplace_inventoryModel.find({ dealer: userId, _id: carId });
     if (matchedCars.length) {
     // find the car by its id and delete if you are the dealer
-    await CarModel.findByIdAndDelete(carId);
+    await marketplace_inventoryModel.findByIdAndDelete(carId);
     res.status(202).send({ message: 'car deleted successfully.' });
     } else {
     res.status(404).send({ message: "you're not authorized to delete this car!" });
@@ -116,4 +116,4 @@ const deleteCar = async (req: Request, res: Response) => {
     }
     };
     
-    module.exports = { getAllCars, postCar, updateCarDetails, deleteCar };
+export { getAllCars, postCar, updateCarDetails, deleteCar };
