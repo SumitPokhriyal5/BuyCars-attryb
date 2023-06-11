@@ -41,4 +41,16 @@ The backend is implemented using Node.js with Express.js as the web framework. I
 - **mongoose**: MongoDB object modeling tool.
 - **nodemon**: Utility for automatically restarting the server during development.
 
+## Home Page
+![Screenshot (36)](https://github.com/SumitPokhriyal5/hangman-word-game/assets/112632728/fbfe964c-8df6-4b0e-b1e4-9cd3c76662c5)
+![Screenshot (37)](https://github.com/SumitPokhriyal5/hangman-word-game/assets/112632728/6a877079-e5c0-41d6-b834-c988b4adcf4b)
 
+## Sell Cars Page
+![Screenshot (38)](https://github.com/SumitPokhriyal5/hangman-word-game/assets/112632728/ab45a885-7138-4964-b614-b9f488ab2cba)
+![Screenshot (39)](https://github.com/SumitPokhriyal5/hangman-word-game/assets/112632728/91b67224-a0d2-44a7-a06b-c81764580da4)
+
+## SinUp Page
+![Screenshot (35)](https://github.com/SumitPokhriyal5/hangman-word-game/assets/112632728/e58ebe15-3c5e-4746-b74f-f4aca30f1946)
+
+## Login Page
+![Screenshot (34)](https://github.com/SumitPokhriyal5/hangman-word-game/assets/112632728/5623102c-92bc-4c7f-9268-815d8d486df5)
