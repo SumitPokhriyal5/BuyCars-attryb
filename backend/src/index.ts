@@ -1,5 +1,5 @@
 import express from "express";
-import { Request, Response } from 'express';
+import { Request, Response , NextFunction } from 'express';
 import connectDB from "./config/db.js";
 import userRouter from "./routes/User.route.js";
 import authCheck from "./middlewares/auth.middleware.js";
@@ -12,6 +12,12 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 const app = express();
+
+app.use(function (req : Request, res : Response, next : NextFunction) {
+     res.header("Access-Control-Allow-Origin", "*");
+     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+     next();
+   });
 
 // Enable CORS
 app.use(cors());

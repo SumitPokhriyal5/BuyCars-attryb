@@ -23,8 +23,7 @@ const userSignin = async (req: Request, res: Response) => {
             {
               userId: matchedUser._id,
             },
-            process.env.SECRET_KEY,
-            { expiresIn: '7d' }
+            process.env.SECRET_KEY
           );
           res.status(200).send({
             message: 'Login successful',
