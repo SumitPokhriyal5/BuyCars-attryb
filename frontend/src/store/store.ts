@@ -2,12 +2,13 @@ import { applyMiddleware, combineReducers, compose, legacy_createStore } from 'r
 import thunk from 'redux-thunk'
 import { oemsReducer } from './oems/oems.reducer';
 import { authReducer } from './auth/auth.reducer';
+import { carsReducer } from './cars/cars.reducer';
 
 
 
 const rootReducer = combineReducers({
      authManager: authReducer,
-    //  carsManager: carsReducer,
+     carsManager: carsReducer,
      oemsManager: oemsReducer
 })
 

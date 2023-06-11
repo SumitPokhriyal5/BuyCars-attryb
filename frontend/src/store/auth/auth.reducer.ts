@@ -34,8 +34,8 @@ export const authReducer: Reducer<AuthState> = (
         }
 
         case AUTH_LOGIN_SUCCESS: {
-            localStorage.setItem("carToken", payload.token);
-            localStorage.setItem("username", payload.name);
+            localStorage.setItem("carToken", JSON.stringify(payload.token));
+            localStorage.setItem("username", JSON.stringify(payload.name));
             return { loading: false, error: false, isAuth: true, user: payload };
         }
 
