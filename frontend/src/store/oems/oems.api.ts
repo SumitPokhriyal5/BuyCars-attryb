@@ -1,5 +1,6 @@
 import { AppDispatch } from '../store';
 import { errorOems, loadOems, successOems } from './oems.action';
+import { toast } from "react-toastify";
 
 export const getAllOemsAction = (queryString = "") => async (dispatch: AppDispatch) => {
     dispatch(loadOems());
@@ -21,7 +22,7 @@ export const getAllOemsAction = (queryString = "") => async (dispatch: AppDispat
         }
     } catch (error: any) {
         console.log('error:', error);
-        alert(error.message);
+        toast.error(error.message);
         dispatch(errorOems());
     }
 };

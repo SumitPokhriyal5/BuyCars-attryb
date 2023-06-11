@@ -1,9 +1,13 @@
-import React from 'react'
+import React from 'react';
+import '../assets/scss/auth.scss';
+import LoginForm from '../components/LoginForm';
 
-const Login = () => {
+const Login: React.FC = () => {
   return (
-    <div>Login</div>
-  )
+    <div className="login">    
+      <LoginForm/>
+    </div>
+  );
 }
 
-export default Login
+export default Login;

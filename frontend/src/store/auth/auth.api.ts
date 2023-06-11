@@ -1,15 +1,19 @@
 import { IUserLogin, IUserSignup } from "../../types/auth.types";
 import { AppDispatch } from "../store";
 import { errorAuth, loadAuth, logoutAuth, successAuth, successLoginAuth } from "./auth.action";
+import { toast } from "react-toastify";
 
 export const signinApi = (userData: IUserLogin , navigate : any) => async (dispatch: AppDispatch) => {
-     if (!userData.email || !userData.password) return;
+     if (!userData.email || !userData.password) {
+        toast.error("Fill the Details")
+        return;
+     }
 
      // start loading
      dispatch(loadAuth());
 
      try {
-          const res = await fetch(`${import.meta.env.VITE_APP_SERVER_URL}/auth/signin`, {
+          const res = await fetch(`${import.meta.env.VITE_APP_SERVER_URL}/user/signin`, {
                method: 'POST',
                body: JSON.stringify(userData),
                headers: {
@@ -22,21 +26,22 @@ export const signinApi = (userData: IUserLogin , navigate : any) => async (dispa
           if (res.ok) {
                dispatch(successLoginAuth(data.user));
                navigate('/');
+               toast.success(data.message)
           } else {
                dispatch(errorAuth());
+               toast.error(data.message);
           }
 
-          alert(data.message)
 
      } catch (error : any) {
           console.log('error:', error);
           dispatch(errorAuth());
-          alert(error.message);
+          toast.error(error.message);
      }
 }
 
 
-export const signupApi = (userData: IUserSignup) => async (dispatch: AppDispatch) => {
+export const signupApi = (userData: IUserSignup , navigate : any) => async (dispatch: AppDispatch) => {
      if (!userData.username || !userData.email || !userData.password) return;
 
      // ? PASSWORD VERIFIER
@@ -49,7 +54,7 @@ export const signupApi = (userData: IUserSignup) => async (dispatch: AppDispatch
      dispatch(loadAuth());
 
      try {
-          const res = await fetch(`${import.meta.env.VITE_APP_SERVER_URL}/auth/signup`, {
+          const res = await fetch(`${import.meta.env.VITE_APP_SERVER_URL}/user/signup`, {
                method: "POST",
                body: JSON.stringify(userData),
                headers: {
@@ -60,12 +65,15 @@ export const signupApi = (userData: IUserSignup) => async (dispatch: AppDispatch
           const data = await res.json();
 
           dispatch(res.ok ? successAuth() : errorAuth());
+          if(res.ok){
+            navigate('/login')
+            toast.success(data.message)
+          }else  toast.error(data.message)
 
-          alert(data.message);
      } catch (error : any) {
           console.log('error:', error);
           dispatch(errorAuth())
-          alert(error.message);
+          toast.error(error.message);
      }
 }
 

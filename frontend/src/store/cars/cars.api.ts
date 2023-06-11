@@ -3,6 +3,7 @@ import { ThunkAction } from "redux-thunk";
 import { AnyAction } from "redux";
 import { AppDispatch, RootState } from "../store";
 import { errorCars, loadCars, successCars } from "./cars.action";
+import { toast } from "react-toastify";
 
 export const getAllCarsApi: ActionCreator<ThunkAction<
     void,
@@ -34,7 +35,7 @@ export const getAllCarsApi: ActionCreator<ThunkAction<
         else dispatch(errorCars());
     } catch (error: any) {
         console.log("error:", error);
-        alert(error.message);
+        toast.error(error.message);
         dispatch(errorCars());
     }
 };
@@ -69,13 +70,18 @@ export const createCarApi: ActionCreator<ThunkAction<
 
 
         // if request success then store the data otherwise set error
-        if (res.ok) dispatch<any>(getAllCarsApi());
-        else dispatch(errorCars());
+        if (res.ok) {
+            dispatch<any>(getAllCarsApi());
+            toast.success(data.message)
+        }
+        else {
+            dispatch(errorCars());
+            toast.error(data.message)
+        }
 
-        alert(data.message);
     } catch (error: any) {
         console.log('error:', error);
-        alert(error.message);
+        toast.error(error.message);
         dispatch(errorCars());
     }
 };
@@ -109,13 +115,18 @@ export const updateCarApi: ActionCreator<ThunkAction<
         const data = await res.json();
 
         // if request success then store the data otherwise set error
-        if (res.ok) dispatch<any>(getAllCarsApi());
-        else dispatch(errorCars());
+        if (res.ok){
+            dispatch<any>(getAllCarsApi());
+            toast.success(data.message)
+        } 
+        else {
+            dispatch(errorCars());
+            toast.error(data.message)
+        }
 
-        alert(data.message);
     } catch (error: any) {
         console.log('error:', error);
-        alert(error.message);
+        toast.error(error.message);
         dispatch(errorCars());
     }
 };
@@ -148,13 +159,18 @@ export const deleteCarApi: ActionCreator<ThunkAction<
         const data = await res.json();
 
         // if request success then store the data otherwise set error
-        if (res.ok) dispatch<any>(getAllCarsApi());
-        else dispatch(errorCars());
+        if (res.ok) {
+            dispatch<any>(getAllCarsApi());
+            toast.success(data.message)
+        }
+        else {
+            dispatch(errorCars());
+            toast.error(data.message)
+        }
 
-        alert(data.message);
     } catch (error: any) {
         console.log('error:', error);
-        alert(error.message);
+        toast.error(error.message);
         dispatch(errorCars());
     }
 };
