@@ -1,6 +1,6 @@
 # Buy Cars
 
-The project is a MERN web application called **BuyCars**, which serves as a marketplace for second-hand cars. Users can buy and sell cars on the platform. The application includes features for user authentication, car listing, filtering, editing, and deleting.
+The project is a MERN web application called **BuyCars**, which serves as a marketplace for second-hand cars. Users can buy and sell cars on the platform. The application includes features for user authentication, car listing, filtering, editing, and deleting. This is a Solo Project Built in 2 days.
 
 ## Features
 
