@@ -1,0 +1,45 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+//   position: fixed;
+//   width: 100%;
+  background-color: #333;
+  color: #fff;
+  .left {
+    img {
+      height: 30px;
+      width: auto;
+    }
+  }
+  
+  .right {
+    .nav-list {
+      display: flex;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .nav-item {
+      margin-right: 20px;
+      div {
+        cursor: pointer;
+      }
+    }
+    .nav-link {
+      display: flex;
+      align-items: center;
+      color: #fff;
+      text-decoration: none;
+      span {
+        margin-left: 5px;
+      }
+      :hover {
+        opacity: 0.8;
+      }
+    }
+  }
+}
+
+

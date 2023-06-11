@@ -1,8 +1,12 @@
+import Navbar from "../components/Navbar";
 
 const SellCar = () => {
   return (
-    <div>SellCar</div>
-  )
-}
+    <>
+      <Navbar />
+      <div>SellCar</div>
+    </>
+  );
+};
 
-export default SellCar
+export default SellCar;
