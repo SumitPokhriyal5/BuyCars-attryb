@@ -2,7 +2,7 @@ import { AppDispatch } from '../store';
 import { errorOems, loadOems, successOems } from './oems.action';
 import { toast } from "react-toastify";
 
-export const getAllOemsAction = (queryString = "") => async (dispatch: AppDispatch) => {
+export const getAllOemsApi = (queryString = "") => async (dispatch: AppDispatch) => {
     dispatch(loadOems());
 
     try {

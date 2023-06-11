@@ -1,0 +1,219 @@
+// Variables
+$primary-color: #007bff;
+$secondary-color: #6c757d;
+$gradient-start: #007bff;
+$gradient-end: #6c757d;
+
+// Media queries
+$mobile-width: 576px;
+$tablet-width: 768px;
+$desktop-width: 992px;
+
+// Helper mixins
+@mixin gradient-background {
+  background: linear-gradient(to right, $gradient-start, $gradient-end);
+}
+
+@mixin hover-scale {
+  transition: transform 0.3s;
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+// Styles
+.home {
+display: flex;
+
+  
+.queries {
+    background-color: white;
+    height: 100vh; /* Set height to full viewport height */
+    padding: 15px;
+    position: sticky;
+    top: 0;
+    
+    .search {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+  
+      input[type="search"] {
+        flex-grow: 1;
+        padding: 8px;
+        border: none;
+        border-radius: 4px;
+        font-size: 16px;
+      }
+  
+      span {
+        margin-left: 10px;
+        color: $primary-color;
+        cursor: pointer;
+  
+        @include hover-scale;
+      }
+    }
+  
+    .color-select {
+      width: 100%;
+      padding: 8px;
+      border-radius: 4px;
+      font-size: 16px;
+    }
+  
+    .price-filter,
+    .mileage-filter {
+      margin-top: 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 40px;
+  
+      span {
+        margin-right: 10px;
+        font-weight: bold;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+  
+      input[type="number"] {
+        width: 100%;
+        padding: 8px;
+        border: none;
+        border-radius: 4px;
+        font-size: 16px;
+        margin-right: 10px;
+      }
+    }
+  }
+  
+
+  .cars {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    // .card-container {
+    //   background: white;
+    //   border-radius: 8px;
+    //   padding: 20px;
+
+    //   .oemSpecs-container {
+    //     display: flex;
+    //     gap: 20px;
+    //     margin-bottom: 20px;
+
+    //     img {
+    //       max-width: 100%;
+    //       height: auto;
+    //       border-radius: 4px;
+    //     }
+
+    //     > div:last-child {
+    //       display: flex;
+    //       flex-direction: column;
+    //       justify-content: space-between;
+
+    //       span {
+    //         font-weight: bold;
+    //         margin-bottom: 5px;
+    //       }
+
+    //       > div:last-child {
+    //         display: flex;
+    //         flex-wrap: wrap;
+    //         gap: 5px;
+    //       }
+    //     }
+    //   }
+
+    //   .dealer-container {
+    //     display: flex;
+    //     justify-content: space-between;
+    //     margin-top: 20px;
+
+    //     > div:first-child {
+    //       > div {
+    //         > div {
+    //           display: flex;
+    //           justify-content: space-between;
+    //           align-items: center;
+    //           margin-bottom: 10px;
+
+    //           span {
+    //             font-weight: bold;
+    //           }
+
+    //           > span:last-child {
+    //             color: #efefef;
+    //           }
+    //         }
+    //       }
+    //     }
+
+    //     .dealer-buy-edit {
+    //       display: flex;
+    //       align-items: center;
+    //       margin-top: 10px;
+
+    //       div {
+    //         button {
+    //           background: none;
+    //           border: none;
+    //           color: white;
+    //           cursor: pointer;
+    //           display: flex;
+    //           align-items: center;
+    //           margin-right: 10px;
+
+    //           @include hover-scale;
+
+    //           span {
+    //             margin-right: 5px;
+
+    //             &:first-child {
+    //               font-weight: bold;
+    //             }
+    //           }
+
+    //           svg {
+    //             font-size: 1.2rem;
+    //           }
+    //         }
+    //       }
+    //     }
+    //   }
+    // }
+  }
+}
+
+// Media queries
+@media (max-width: $mobile-width) {
+  .home {
+    .cars {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+}
+
+@media (min-width: $mobile-width) and (max-width: $tablet-width) {
+  .home {
+    .cars {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+}
+
+@media (min-width: $tablet-width) and (max-width: $desktop-width) {
+  .home {
+    .cars {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+}
+
+  
+// Gradient background
+body {
+  @include gradient-background;
+}

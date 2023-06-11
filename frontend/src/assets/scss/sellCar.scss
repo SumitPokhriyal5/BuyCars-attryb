@@ -1,0 +1,129 @@
+$blue: #17059ed5;
+$white-color: #ffffff;
+
+.sellCar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .queryContainer {
+    margin-top: 20px;
+
+    .searchContainer {
+      display: flex;
+      align-items: center;
+
+      input[type="search"] {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin-right: 10px;
+        font-size: 1rem;
+        transition: border-color 0.3s;
+
+        &:focus {
+          outline: none;
+          border-color: #76ff03;
+          box-shadow: 0 0 5px rgba(118, 255, 3, 0.3);
+        }
+      }
+
+      .bs-search {
+        cursor: pointer;
+        font-size: 1.5rem;
+        color: #03a3ff;
+        transition: color 0.3s;
+
+        &:hover {
+          color: #3102b2;
+        }
+      }
+    }
+  }
+
+  .oemSpecsContainer {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.45);
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(5px);
+    table {
+      width: 100%;
+      border-collapse: collapse;
+
+      caption {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+        text-align: left;
+      }
+
+      th,
+      td {
+        padding: 10px;
+        border: 1px solid gray;
+        text-align: center;
+      }
+
+      th {
+        background-color: $blue;
+        color: $white-color;
+      }
+
+      tbody {
+        tr {
+          &:nth-child(odd) {
+            background-color: #f5f5f5;
+          }
+
+          td:nth-child(6) {
+            span {
+              height: 20px;
+              width: 20px;
+              border: 1px solid gray;
+              border-radius: 50%;
+              display: inline-block;
+              margin-right: 5px;
+            }
+          }
+
+          td:nth-child(10) {
+            button {
+              padding: 5px 10px;
+              border: none;
+              border-radius: 5px;
+              font-weight: bold;
+              transition: background-color 0.3s, color 0.3s;
+              &:hover {
+                background-color: #033aff;
+                color: white;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .queryContainer {
+      .searchContainer {
+        flex-direction: column;
+        align-items: flex-start;
+
+        input[type="search"] {
+          margin-bottom: 10px;
+        }
+      }
+    }
+
+    .oemSpecsContainer {
+      table {
+        th,
+        td {
+          padding: 8px;
+        }
+      }
+    }
+  }
+}
