@@ -5,7 +5,7 @@ export const getAllOemsAction = (queryString = "") => async (dispatch: AppDispat
     dispatch(loadOems());
 
     try {
-        const token = localStorage.getItem("token");
+        const token = localStorage.getItem("carToken");
         const headers: HeadersInit = {
             'Content-Type': 'application/json',
             'authorization': token ? JSON.parse(token) : ""
