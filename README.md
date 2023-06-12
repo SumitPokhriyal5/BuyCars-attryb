@@ -11,7 +11,15 @@ The project is a MERN web application called **BuyCars**, which serves as a mark
 
 ## Tech Stack
 
-The application is built using the MERN stack (MongoDB, Express, React, Node.js, TypeScript, SCSS) and follows a client-server architecture.
+The application is built using the MERN stack (MongoDB, Express, React, Node.js), TypeScript, SCSS, Redux and follows a client-server architecture.<br/>
+![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+![SCSS](https://img.shields.io/badge/scss-%231572B6.svg?style=for-the-badge&logo=scss&logoColor=white)
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
+![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB)
+![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
+![Redux](https://img.shields.io/badge/redux-%23593d88.svg?style=for-the-badge&logo=redux&logoColor=white)
+![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)
 
 ### Frontend
 
@@ -40,6 +48,22 @@ The backend is implemented using Node.js with Express.js as the web framework. I
 - **jsonwebtoken**: JSON Web Token implementation.
 - **mongoose**: MongoDB object modeling tool.
 - **nodemon**: Utility for automatically restarting the server during development.
+
+## API Routes
+
+The following table lists the available API routes and their descriptions:
+
+| Route             | Method | Description                                                    |
+|-------------------|--------|----------------------------------------------------------------|
+| user/signup/      | POST   | Register user data in the database                             |
+| user/signin/      | POST   | Authenticate user credentials and allow them to log in         |
+| marketplace/      | GET    | Retrieve all available cars for sale                           |
+| marketplace/      | POST   | Post a new car for sale in the marketplace                     |
+| marketplace/:carId | PATCH  | Update specific car details (only allowed for dealers)         |
+| marketplace/:carId | DELETE | Delete specific car (only allowed for dealers)                 |
+| oemspec/          | GET    | Retrieve the list of Original Equipment Manufacturers (OEMs)   |
+| oemspec/          | POST   | Add new Original Equipment Manufacturer's data to the database |
+
 
 ## Home Page
 ![Screenshot (36)](https://github.com/SumitPokhriyal5/hangman-word-game/assets/112632728/fbfe964c-8df6-4b0e-b1e4-9cd3c76662c5)
