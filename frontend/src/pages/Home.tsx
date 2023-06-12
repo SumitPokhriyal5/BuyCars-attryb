@@ -6,8 +6,8 @@ import { getAllCarsApi } from '../store/cars/cars.api';
 import { ThunkDispatch } from 'redux-thunk';
 import { AnyAction } from '@reduxjs/toolkit';
 import Navbar from '../components/Navbar';
-import "../assets/scss/Home.scss"
 
+import "../assets/scss/Home.scss"
 const debouncer = (cb: () => void, delay: number) => {
   let timerRef: any;
   return () => {
@@ -88,7 +88,7 @@ function Home() {
         </div>
       </div>
       {/* map cars */}
-      {loading ? <h1>Loading...</h1> : (
+      {loading ? <img className='loadingGif' src="https://i.gifer.com/origin/34/34338d26023e5515f6cc8969aa027bca_w200.gif" alt="loading..." /> : (
         <div className="cars">
           {data?.map((el: any) => <Card key={el._id} element={el} />)}
         </div>

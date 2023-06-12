@@ -89,7 +89,12 @@ display: flex;
     }
   }
   
-
+.loadingGif{
+  display: flex;
+  aspect-ratio: 1/1;
+  width: 300px;
+  margin: auto;
+}
   .cars {
     display: grid;
     grid-template-columns: repeat(2,1fr);
