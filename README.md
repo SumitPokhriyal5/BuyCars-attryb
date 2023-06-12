@@ -11,7 +11,7 @@ The project is a MERN web application called **BuyCars**, which serves as a mark
 
 ## Tech Stack
 
-The application is built using the MERN stack (MongoDB, Express, React, Node.js), TypeScript, SCSS, Redux and follows a client-server architecture.
+The application is built using the MERN stack (MongoDB, Express, React, Node.js), TypeScript, SCSS, Redux and follows a client-server architecture.<br/>
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
 ![SCSS](https://img.shields.io/badge/scss-%231572B6.svg?style=for-the-badge&logo=scss&logoColor=white)
 ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
