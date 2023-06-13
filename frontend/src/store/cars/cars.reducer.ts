@@ -1,10 +1,11 @@
+import { ICarData } from "../../types/cars.types";
 import { CARS_ERROR, CARS_LOADING, CARS_SUCCESS } from "./cars.types";
 import { Reducer } from "@reduxjs/toolkit";
 
 interface CarState {
   loading: boolean;
   error: boolean;
-  data: any[]; 
+  data: ICarData[]; 
 }
 
 const initialState: CarState = {

@@ -8,6 +8,7 @@ import { AnyAction } from '@reduxjs/toolkit';
 import Navbar from '../components/Navbar';
 
 import "../assets/scss/Home.scss"
+import { ICarData } from '../types/cars.types';
 const debouncer = (cb: () => void, delay: number) => {
   let timerRef: any;
   return () => {
@@ -53,7 +54,7 @@ function Home() {
     <div className='home'>
       <div className="queries">
         <div className="search">
-          <input type="search" placeholder='Search here!' ref={searchRef} onInput={debounce} />
+          <input type="search" placeholder='Search Model here!' ref={searchRef} onInput={debounce} />
           <span><BsSearch onClick={createQueryUrl} /></span>
         </div>
 
@@ -90,7 +91,7 @@ function Home() {
       {/* map cars */}
       {loading ? <img className='loadingGif' src="https://i.gifer.com/origin/34/34338d26023e5515f6cc8969aa027bca_w200.gif" alt="loading..." /> : (
         <div className="cars">
-          {data?.map((el: any) => <Card key={el._id} element={el} />)}
+          {data?.map((el: ICarData) => <Card key={el._id} element={el} />)}
         </div>
       )}
     </div>

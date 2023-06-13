@@ -8,7 +8,7 @@ import { ThunkDispatch } from "redux-thunk";
 import { AnyAction } from "@reduxjs/toolkit";
 import "../assets/scss/Card.scss"
 
-interface CardProps {
+export interface CardProps {
   element: {
     carImage: string;
     dealer: { username: string };
